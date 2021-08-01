@@ -1,0 +1,35 @@
+<div class="col-lg-5">
+    <div class="well bs-component">
+        <form #addUserForm="ngForm" (ngSubmit)="saveUser(addUserForm.value)" class="form-horizontal">
+            <fieldset>
+                <legend>Create New User</legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-3 control-label">Email</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputUser" class="col-lg-3 control-label">User</label>
+                    <div class="col-lg-8">
+                        <input type="text" class="form-control" id="inputUser" placeholder="User" name="user"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-3 control-label">Password</label>
+                    <div class="col-lg-8">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                            name="password" ngModel>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-8 col-lg-offset-3">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
