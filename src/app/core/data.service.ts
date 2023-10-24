@@ -13,7 +13,7 @@ import { User, UserLogin } from '../models/user';
 @Injectable()
 export class DataService {
 
-  url = 'https://cms-books-backend.herokuapp.com';
+  url = 'http://localhost:3000';
   authData: any = [];
   mostPopularBook: Book = allBooks[0];
 
@@ -40,14 +40,14 @@ export class DataService {
   }
 
   getAllReaders(): Observable<Reader[] | BookTrackerError> {
-    return this.http.get<Reader[]>(`${this.url}/api/readers`)
+    return this.http.get<Reader[]>(`${this.url}/readers`)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   getAllReaderById(id: number): Observable<Reader> {
-    return this.http.get<Reader>(`${this.url}/api/readers/${id}`, {
+    return this.http.get<Reader>(`${this.url}/readers/${id}`, {
       headers: new HttpHeaders({
         'Accept': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -56,14 +56,14 @@ export class DataService {
   }
 
   getAllBooks(): Observable<Book[] | BookTrackerError> {
-    return this.http.get<Book[]>(`${this.url}/api/books`)
+    return this.http.get<Book[]>(`${this.url}/books`)
       .pipe(
         catchError(err => this.handleError(err))
       );
   }
 
   getAllBookById(id: number): Observable<Book> {
-    return this.http.get<Book>(`${this.url}/api/books/${id}`, {
+    return this.http.get<Book>(`${this.url}/books/${id}`, {
       headers: new HttpHeaders({
         'Accept': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -72,7 +72,7 @@ export class DataService {
   }
 
   getOldBookId(id: number): Observable<OldBook> {
-    return this.http.get<Book>(`${this.url}/api/books/${id}`, {
+    return this.http.get<Book>(`${this.url}/books/${id}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.authData.token}`
       })
@@ -91,7 +91,7 @@ export class DataService {
   }
 
   authUser(auth: UserLogin): Observable<UserLogin> {
-    return this.http.post<UserLogin>(`${this.url}/api/auth`, auth, {
+    return this.http.post<UserLogin>(`${this.url}/auth`, auth, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
@@ -99,7 +99,7 @@ export class DataService {
   }
 
   addUser(newUser: User): Observable<User> {
-    return this.http.post<User>(`${this.url}/api/users`, newUser, {
+    return this.http.post<User>(`${this.url}/users`, newUser, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
@@ -107,7 +107,7 @@ export class DataService {
   }
 
   addBook(newBook: Book): Observable<Book> {
-    return this.http.post<Book>(`${this.url}/api/books`, newBook, {
+    return this.http.post<Book>(`${this.url}/books`, newBook, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -116,7 +116,7 @@ export class DataService {
   }
 
   updateBook(updateBook: Book): Observable<void> {
-    return this.http.put<void>(`${this.url}/api/books/${updateBook.bookID}`, updateBook, {
+    return this.http.put<void>(`${this.url}/books/${updateBook.bookID}`, updateBook, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -125,7 +125,7 @@ export class DataService {
   }
 
   deleteBook(bookID: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/api/books/${bookID}`, {
+    return this.http.delete<void>(`${this.url}/books/${bookID}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.authData.token}`
       })
@@ -133,7 +133,7 @@ export class DataService {
   }
 
   addReader(newReader: Reader): Observable<Reader> {
-    return this.http.post<Reader>(`${this.url}/api/readers`, newReader, {
+    return this.http.post<Reader>(`${this.url}/readers`, newReader, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -142,7 +142,7 @@ export class DataService {
   }
 
   updateReader(updateReader: Reader): Observable<void> {
-    return this.http.put<void>(`${this.url}/api/readers/${updateReader.readerID}`, updateReader, {
+    return this.http.put<void>(`${this.url}/readers/${updateReader.readerID}`, updateReader, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -151,7 +151,7 @@ export class DataService {
   }
 
   deleteReader(readerID: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/api/readers/${readerID}`, {
+    return this.http.delete<void>(`${this.url}/readers/${readerID}`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.authData.token}`
       })

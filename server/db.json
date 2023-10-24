@@ -1,0 +1,42 @@
+{
+  "books": [
+    {
+      "bookID": 1,
+      "title": "AngularJS",
+      "author": "Joe Papa",
+      "publicationYear": 2019
+    },
+    {
+      "bookID": 2,
+      "title": "Angular 2",
+      "author": "Rodrigo Branas",
+      "publicationYear": 2020
+    },
+    {
+      "bookID": 3,
+      "title": "Angular 4",
+      "author": "Andre Gomes",
+      "publicationYear": 2018
+    }
+  ],
+  "readers": [
+    {
+      "readerID": 1,
+      "name": "Andre",
+      "weeklyReadingGoal": 10,
+      "totalMinutesRead": 35
+    },
+    {
+      "readerID": 2,
+      "name": "Rodrigo",
+      "weeklyReadingGoal": 6,
+      "totalMinutesRead": 190
+    },
+    {
+      "readerID": 3,
+      "name": "Joe",
+      "weeklyReadingGoal": 2,
+      "totalMinutesRead": 55
+    }
+  ]
+}
