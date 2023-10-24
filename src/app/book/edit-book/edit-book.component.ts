@@ -25,10 +25,10 @@ export class EditBookComponent implements OnInit {
     let bookID: number = parseInt(this.route.snapshot.params['id']);
     this.dataService.getAllBookById(bookID)
       .subscribe(
-        (data: Book) => this.selectedBook = data[0],
+        (data: Book) => this.selectedBook = data,
         (err: any) => console.log(err)
       );
-    
+
     this.dataService.getOldBookId(bookID)
       .subscribe(
         (data: OldBook) => console.log(`Old book title: ${data.bookTitle}`)

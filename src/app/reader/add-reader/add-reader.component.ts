@@ -17,7 +17,7 @@ export class AddReaderComponent implements OnInit {
 
   saveReader(formValues: any): void {
     let newReader: Reader = <Reader>formValues;
-    newReader.readerID = 0;
+    newReader.id = 0;
     console.log(newReader);
 
     this.dataService.addReader(newReader)

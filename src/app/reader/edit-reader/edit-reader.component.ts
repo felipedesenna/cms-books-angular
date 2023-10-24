@@ -26,7 +26,7 @@ export class EditReaderComponent implements OnInit {
     let readerID: number = parseInt(this.route.snapshot.params['id']);
     this.dataService.getAllReaderById(readerID)
       .subscribe(
-        (data: Reader) => this.selectedReader = data[0],
+        (data: Reader) => this.selectedReader = data,
         (err: any) => console.log(err)
       );
 

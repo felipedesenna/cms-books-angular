@@ -66,7 +66,7 @@ export class DashboardComponent implements OnInit {
     this.dataService.deleteBook(bookID)
       .subscribe(
         (data: void) => {
-          let index: number = this.allBooks.findIndex(book => book.bookID === bookID);
+          let index: number = this.allBooks.findIndex(book => book.id === bookID);
           this.allBooks.splice(index, 1);
         },
         (err: any) => console.log(err)
@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
     this.dataService.deleteReader(readerID)
       .subscribe(
         (data: void) => {
-          let index: number = this.allReaders.findIndex(reader => reader.readerID === readerID);
+          let index: number = this.allReaders.findIndex(reader => reader.id === readerID);
           this.allReaders.splice(index, 1);
         },
         (err: any) => console.log(err)

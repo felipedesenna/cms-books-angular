@@ -116,7 +116,7 @@ export class DataService {
   }
 
   updateBook(updateBook: Book): Observable<void> {
-    return this.http.put<void>(`${this.url}/books/${updateBook.bookID}`, updateBook, {
+    return this.http.put<void>(`${this.url}/books/${updateBook.id}`, updateBook, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
@@ -142,7 +142,7 @@ export class DataService {
   }
 
   updateReader(updateReader: Reader): Observable<void> {
-    return this.http.put<void>(`${this.url}/readers/${updateReader.readerID}`, updateReader, {
+    return this.http.put<void>(`${this.url}/readers/${updateReader.id}`, updateReader, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.authData.token}`
