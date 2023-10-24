@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { UserModule } from './user/user.module';
   ],
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    MenuComponent
   ],
   bootstrap: [AppComponent]
 })
