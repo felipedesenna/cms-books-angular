@@ -7,26 +7,29 @@
                     <label for="inputEmail" class="col-lg-3 control-label">Email</label>
                     <div class="col-lg-8">
                         <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email"
-                            ngModel>
+                            ngModel required #email="ngModel">
                     </div>
+                    <div *ngIf="!email.valid && email.touched" class="alert alert-danger col-lg-8" role="alert">Email is mandatory</div>
                 </div>
                 <div class="form-group">
                     <label for="inputUser" class="col-lg-3 control-label">User</label>
                     <div class="col-lg-8">
                         <input type="text" class="form-control" id="inputUser" placeholder="User" name="user"
-                            ngModel>
+                            ngModel required #user="ngModel">
                     </div>
+                    <div *ngIf="!user.valid && user.touched" class="alert alert-danger col-lg-8" role="alert">User is mandatory</div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="col-lg-3 control-label">Password</label>
                     <div class="col-lg-8">
                         <input type="password" class="form-control" id="inputPassword" placeholder="Password"
-                            name="password" ngModel>
+                            name="password" ngModel required #password="ngModel">
                     </div>
+                    <div *ngIf="!password.valid && password.touched" class="alert alert-danger col-lg-8" role="alert">Password is mandatory</div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-8 col-lg-offset-3">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!addUserForm.valid">Save</button>
                     </div>
                 </div>
             </fieldset>
