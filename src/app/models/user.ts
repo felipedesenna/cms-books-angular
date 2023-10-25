@@ -2,10 +2,10 @@ export class User {
     id: number;
     email: string;
     user: string;
-    password: number;
+    password: string;
 }
 
 export class UserLogin {
     user: string;
-    password: number;
+    password: string;
 }
