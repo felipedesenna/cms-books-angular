@@ -19,7 +19,7 @@ export class AddUserComponent implements OnInit {
 
   saveUser(formValues: any): void {
     let newUser: User = <User>formValues;
-    newUser.userID = 0;
+    newUser.id = 0;
 
     this.dataService.addUser(newUser)
       .subscribe(
