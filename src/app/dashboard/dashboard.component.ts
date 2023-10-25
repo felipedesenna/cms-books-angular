@@ -1,4 +1,4 @@
-import { Component, OnInit, Version, VERSION } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
